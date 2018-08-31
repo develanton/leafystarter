@@ -1,5 +1,5 @@
 
 
-#Leafystarter
+# Leafystarter
 
-####We are a platform that helps jumpstart your green projects.
+#### We are a platform that helps jumpstart your green projects.
