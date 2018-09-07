@@ -1,18 +1,23 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Navbar from "./components/navbar/navbar";
+import Right from './components/right';
+import Item from './components/item/item';
+import { Container } from 'semantic-ui-react';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Navbar />
+        <div className="row">
+          <div className="ten wide column">
+            <Item  />
+          </div>
+          <div>
+            <Right className="column" />
+          </div>
+        </div>
       </div>
     );
   }
