@@ -1,0 +1,29 @@
+#equal{
+    width: 500px;
+    background: rgb(75, 147, 75);
+    padding: 40px;
+    padding-top:5px;
+    padding-bottom:10px;
+    border-radius: 5px;
+    margin-right: 70px;
+}
+.upload{
+    display: none;
+}
+.imgButton{
+    width: 100%;
+    height: 60px;;
+}
+.fap{
+    margin: 20%;
+    padding-left:14%;
+    padding-right:0px;
+
+}
+.start-right{
+    margin-left: 52%;
+}
+.project-location{
+    text-align: right;
+    font-size: medium;
+}

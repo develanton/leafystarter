@@ -1,0 +1,14 @@
+.centralContainer{
+    padding-top: 90px;
+    padding-left: 80px;
+}
+.signCard {
+    height: 613px !important;
+    width: 600px !important;
+}
+.description{
+    height: auto !important;
+}
+.image{
+    height: 300px;
+}

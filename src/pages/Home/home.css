@@ -1,0 +1,29 @@
+.homes{
+   margin-top: 80px !important;
+ 
+}
+
+.main-text{
+    margin-left: 2.7% !important;
+    width: 74%;
+    height: 220px;
+    margin-top:30px ; 
+}
+.heading-text{
+    padding-top:10px;
+    font-size: 200%;
+    margin-bottom:20px;
+}
+.quote-link{
+    font-size: xx-large;
+    padding-left: 200px;
+    color: white;
+}
+.quote-link:hover { 
+    color: rgb(177, 177, 174);
+}
+#species{
+    margin-left:25%;
+    margin-top:5px;
+    color:#5c6 !;
+}

@@ -1,0 +1,15 @@
+.wideSet{
+    flex: 1 1 0%;
+    overflow-y: scroll;
+    top: 72px !important;
+    /*width: 350px !important;*/
+}
+#aqiusDisplay{
+    background-color: #5c6 ;
+}   
+
+@media(max-width:1100px){
+    .wideSet{
+        display: none !important;
+    }
+}
