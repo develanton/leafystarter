@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Form, Segment, Checkbox, Dropdown } from 'semantic-ui-react'
+import { Button, Form, Segment, Checkbox, Dropdown, Image } from 'semantic-ui-react'
 import './register.css'
 import countries from './flags.js'
 import API from '../../api/api'
@@ -76,6 +76,7 @@ class RegisterForm extends Component {
         </div>
         <div className="column">
           <Segment className="register-desc" padded="very">
+          <Image src="./assets/idea.png" style={{width:400,height:500}}></Image>
           </Segment>
         </div>
       </div>
