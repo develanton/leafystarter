@@ -27,3 +27,8 @@
     margin-top:5px;
     color:#5c6 !;
 }
+@media(max-width:1000px){
+    .main-text{
+        margin-left: 6%;
+    }
+    }

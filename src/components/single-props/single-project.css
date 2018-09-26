@@ -1,0 +1,29 @@
+#cards{
+    margin-top:100px;
+    margin-left:30px !important;
+}
+.slide {
+
+    width:700px !important;
+    /*
+    -webkit-animation: slide-right 1s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+	        animation: slide-right 1s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+         */   
+}
+.right{
+    width: 300px !important;
+    margin-left: 30px;
+}
+.two{
+    width: 60px;
+}
+#description{
+    margin-left:30px !important;
+    margin-top: 30px;
+}
+
+#big{
+    width: 700px;
+    height: 400px;
+}
+  
