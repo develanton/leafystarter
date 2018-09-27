@@ -4,7 +4,7 @@ import SingleCard from '../../components/single/single'
 import Right from '../../components/sidebar/right'
 import API from '../../api/api'
 
-export class One extends Component {
+ class One extends Component {
 
     state = {
         project: {}
@@ -26,7 +26,9 @@ export class One extends Component {
                 <div className="homes">
                     <Navbar />
                         <div className="ten wide column">
-                            <SingleCard />
+                            <SingleCard 
+                                id={this.props.match.params.id}
+                             />
                         </div>
                         <div>
                             <Right className="column rightMobile" />

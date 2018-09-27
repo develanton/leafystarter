@@ -1,7 +1,8 @@
-import { Item, Container, Dimmer, Loader,  Segment } from 'semantic-ui-react'
+import { Item, Container, Dimmer, Loader, Segment } from 'semantic-ui-react'
 import React, { Component } from 'react';
 import API from "../../api/api";
 import './item.css'
+
 var moment = require('moment');
 
 
@@ -58,6 +59,11 @@ class ArticlesLoad extends Component {
                       <Item.Meta><b>Author:  {item.author}</b></Item.Meta>
                       <Item.Extra><b>Source: {item.source.name}</b></Item.Extra>
                       <Item.Extra><b>Publication Date: {moment(item.publishedAt).format("MMMM Do YYYY")}</b></Item.Extra>
+                      <span className="article-socials">
+                        <a href=""><span className="icons"><i class="far fa-bookmark fa-2x"> </i></span></a>
+                        <a href=""><span className="icons"><i class="fab fa-twitter fa-2x"> </i></span></a>
+                        <a href=""><span className="icons"><i class="fab fa-facebook-square fa-2x"></i></span></a>
+                      </span>
 
                     </div>
                   </Item.Content>

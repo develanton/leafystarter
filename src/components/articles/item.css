@@ -17,6 +17,11 @@
     height: 600px;
     margin-left: 30px !important;
 }
+
+.article-socials{
+    float: right;
+}
+
 @media(max-width:840px){
     .Img{
         padding-bottom: 20px !important;

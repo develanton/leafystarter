@@ -22,7 +22,6 @@ export default class Right extends Component {
 
     /*
     * GET AIR QUALITY FUNCTION  
-    */
     API.airQuality()
     .then((response) => {
       console.log(response.data.data)
@@ -30,6 +29,7 @@ export default class Right extends Component {
       this.setState({ pollution: response.data.data.current.pollution.aqius })
       this.setState({ temperature: response.data.data.current.weather.tp })
     })
+    */
     
     API.allProjects()
     .then(res => {
@@ -70,7 +70,7 @@ export default class Right extends Component {
               <Header as='h4'>{projects.title}</Header>
               <p><b>{projects.location}</b></p>
             </Menu.Item>
-
+            
           })
           }
 

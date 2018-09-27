@@ -18,8 +18,7 @@ export default {
   },
 
   singleProject: function (id) {
-    console.log(process.env.REACT_APP_API_URL + '/api/project/', id);
-    return axios.get(process.env.REACT_APP_API_URL + '/api/project/', id);
+    return axios.get(process.env.REACT_APP_API_URL + '/api/project/'+id);
   },
 
   submitForm: function (formData) {

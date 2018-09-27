@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Button, Form, Segment, Checkbox, Dropdown, Image } from 'semantic-ui-react'
 import './register.css'
-import countries from './flags.js'
+import countries from '../../assets/flags'
 import API from '../../api/api'
 
 let countryOptions = countries;
@@ -38,7 +38,7 @@ class RegisterForm extends Component {
   }
 
   render() {
-
+    const { title, location, duration, funding, about, value } = this.state;
     return (
       <div className="ui grid">
         <div className="column">
@@ -56,7 +56,7 @@ class RegisterForm extends Component {
               </Form.Field>
               <Form.Field>
                 <label>Country:</label>
-                <Dropdown placeholder='Select Country' value={this.state.value} name='country' onChange={this.onChange} fluid multiple search selection options={countryOptions} />
+                <Dropdown placeholder={!location ? 'Select Country': location} value={this.state.value} name='country' onChange={this.onChange} fluid search selection options={countryOptions} />
               </Form.Field>
               <Form.Field>
                 <label>Email:</label>

@@ -1,8 +1,12 @@
- import React, { Component } from 'react';
+import React, { Component } from 'react';
 import { Button, Checkbox, Form, TextArea, Card, Image, Dropdown } from 'semantic-ui-react'
 import axios from 'axios';
 import { Route } from 'react-router-dom'
+import NumberFormat from 'react-number-format';
 import './form.css'
+import countries from '../../assets/flags'
+
+let countryOptions = countries;
 
 const options = [
     { key: 1, text: 'One month', value: 1 },
@@ -38,7 +42,7 @@ class UserForm extends Component {
 
     // SUBMIT TO BACKEND EACH INPUT FROM FORM 
     onSubmit = (e) => {
-       // e.preventDefault();
+        // e.preventDefault();
         const { title, projectImage, location, duration, funding, about } = this.state;
         let formData = new FormData();
 
@@ -59,18 +63,18 @@ class UserForm extends Component {
 
     setRedirect = () => {
         this.setState({
-          redirect: true
+            redirect: true
         })
         this.renderRedirect();
-      }
+    }
     renderRedirect = () => {
         if (this.state.redirect) {
-          return <Route to='/' />
+            return <Route to='/' />
         }
-      }
+    }
 
     render() {
-        const { title, location, duration, funding, about,value } = this.state;
+        const { title, location, duration, funding, about, value } = this.state;
         return (
             <span>
                 <div className="ui grid">
@@ -101,7 +105,7 @@ class UserForm extends Component {
 
                                     <Form.Field>
                                         <label >Project Location </label>
-                                        <input value={location} onChange={this.onChange} name='location' />
+                                        <Dropdown placeholder={!location ? 'Select Country': location} value={this.state.value} name='country' onChange={this.onChange} fluid search selection options={countryOptions} />
                                     </Form.Field>
                                     <Form.Field>
                                         <label >Project Duration</label>
@@ -109,7 +113,15 @@ class UserForm extends Component {
                                     </Form.Field>
                                     <Form.Field>
                                         <label >Funding goal</label>
-                                        <input value={funding} onChange={this.onChange} name='funding' />
+                                        <NumberFormat
+                                            className='project-amount'
+                                            placeHolder='Funding Amount'
+                                            thousandSeparator={true}
+                                            prefix={'$'}
+                                            value={funding}
+                                            onChange={this.onChange}
+                                            name='funding'
+                                        />
                                     </Form.Field>
 
 
@@ -127,7 +139,7 @@ class UserForm extends Component {
                                     <Card.Meta style={{ padding: 10, paddingLeft: 0 }}>
                                         {!duration ? <span className='date'>Project Duration</span> : <span className='date'>{duration}</span>}
                                     </Card.Meta>
-                                    {!about ? <Card.Description>Keep in mind that we only support projects that commit to mother earth. Why not support the change, lets start today to change the world to better place. <br /><br /> Your project will be pre-evaluated by our team, if the project complies with our values it will accepted and launched for funders to support your project.</Card.Description> : <Card.Description>{about}</Card.Description>}
+                                    {!about ? <Card.Description>Keep in mind that we only support projects that commit to mother earth. Why not support the change, lets start today to change the world to better place. <br /><br /> Your project will be pre-evaluated by our team, if the project complies with our values it will be accepted and launched for funders to support your project.</Card.Description> : <Card.Description>{about}</Card.Description>}
                                     <div className="project-location">
                                         {!location ? <b>Project Location</b> : <b>{location}</b>}
                                     </div>

@@ -3,7 +3,7 @@ import { Card, Image, Container, Button } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import API from '../../api/api'
 import './projects.css'
-//require('dotenv').config
+//import SingleCard from '../single-props/index'
 
 
 class ProjectCards extends Component {
@@ -25,20 +25,21 @@ class ProjectCards extends Component {
   }
 
 
+
   render() {
     return (
       <Container id='cards'>
         <Card.Group itemsPerRow={3}>
-          {this.state.card.map(cards => {
+          { this.state.card.map(cards => {
             console.log(cards)
             return (
               <Card
                 as={Link}
                 to={'/project/' + cards._id}
                 key={cards._id}
-                data-id={cards._id}
+                id={cards._id}
                 className="slide-right raised" >
-                <Image src={ cards.projectImage} />
+                <Image src={cards.projectImage} />
                 <Card.Content>
                   <Card.Header>{cards.title}</Card.Header>
                   <Card.Meta>

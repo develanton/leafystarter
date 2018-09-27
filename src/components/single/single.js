@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
-import { Card, Icon, Image, Container } from 'semantic-ui-react'
+import { Card, Icon, Image, Container, Button } from 'semantic-ui-react'
 import NumberFormat from 'react-number-format';
 import API from '../../api/api'
 import './single-project.css'
+import Modal from './modal/fund-modal'
 
 class SingleCard extends Component {
+
+
 
   state = {
     card: [],
@@ -15,16 +18,15 @@ class SingleCard extends Component {
   }
 
   loadcard = () => {
-    console.log(window.location.href.split(","))
-   /* API.singleProject()
+    API.singleProject(this.props.id)
       .then((res) => {
         this.setState({ card: res.data })
       })
-      */
   }
 
 
   render() {
+  console.log(this.props.id);
     return (
       <div>
         <Container id='cards'>
@@ -33,31 +35,20 @@ class SingleCard extends Component {
               <Card key={this.state.card._id} data-id={this.state.card._id} className="slide">
               <iframe width="700" height="370" src="https://www.youtube.com/embed/X-HE4Hfa-OY" frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen title='algea'></iframe>
                 <Card.Content extra>
-                  <a>
-                    <Icon name='user' />
-                    22 Friends
-                  </a>
+                 
                 </Card.Content>
               </Card>
             </div>
-            <div className='column one wide'>
-
-            </div>
+       
             <div className=' column six wide'>
               <Card key={this.state.card._id} data-id={this.state.card._id} className="right">
-                <Image src={this.state.card.url} />
+                <Image src={this.state.card.projectImage} />
                 <Card.Content>
                   <Card.Header>{this.state.card.title}</Card.Header>
                   <Card.Meta>
                     <span className='date'>Joined in 2015</span>
                   </Card.Meta>
                   <Card.Description>Matthew is a musician living in Nashville.</Card.Description>
-                </Card.Content>
-                <Card.Content extra>
-                  <a>
-                    <Icon name='user' />
-                    22 Friends
-          </a>
                 </Card.Content>
               </Card>
             </div>
@@ -68,8 +59,8 @@ class SingleCard extends Component {
           <div className='row'>
             <div className='column six wide'>
               <div className="ui raised very padded text container segment">
-                <h2 className="ui header">Dogs Roles with Humans</h2>
-                <p></p>
+                <h2 className="ui header">{this.state.card.title}</h2>
+                <p>{this.state.card.about}</p>
                 <p></p>
               </div>
             </div>
@@ -79,19 +70,17 @@ class SingleCard extends Component {
             <div className=' column six wide'>
               <Card key={this.state.card._id} data-id={this.state.card._id} className="right">
                 <Card.Content>
-                  <Card.Header>{this.state.card.title}</Card.Header>
+                  <Card.Header></Card.Header>
                   <Card.Meta>
-                    <span className='date'>Joined in 2015</span>
+                    <span className='date'>{this.state.card.duration}</span>
                   </Card.Meta>
                   <Card.Description>
-                  <NumberFormat thousandSeparator={true} prefix={'$'} />
+                  <NumberFormat className='fund-amount'  placeHolder='Funding Amount' thousandSeparator={true} prefix={'$'} />
                   </Card.Description>
                 </Card.Content>
                 <Card.Content extra>
-                  <a>
-                    <Icon name='user' />
-                    22 Friends
-          </a>
+                <Button positive>Support</Button>
+                <Modal />
                 </Card.Content>
               </Card>
             </div>
